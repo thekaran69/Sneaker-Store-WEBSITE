@@ -57,12 +57,14 @@ nav{
 
 .slider{
     background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
-    /* clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%);   */
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%); 
+    overflow: hidden; 
 }
 
 .sliderWrapper{
     display: flex;
     width: 500vw;
+    transition: all 1.5s ease-in-out;
 }
 
 .sliderItem{
@@ -100,7 +102,7 @@ nav{
     left: 10%;
     font-size: 60px;
     color: white;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
     border: 1px solid gray;
     z-index: 1;
@@ -117,7 +119,7 @@ nav{
     border: 1px solid gray;
     z-index: 1;
     cursor: pointer;
-
+    border-radius: 10px;
 }
 
 .buyButton:hover{
@@ -156,4 +158,35 @@ nav{
 }
 .sliderItem:nth-child(5) .sliderPrice{
     color: rgb(124,115,80);
+}
+
+.features{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.featureIcon{
+    width: 50px;
+    height: 50px;
+}
+
+.featureTitle{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px;
+}
+
+.featureDesc{
+    color: gray;
+    width: 50%;
+    height: 100px;
 }
