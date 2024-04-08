@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <nav id="nav">
@@ -38,12 +39,12 @@
     <div class="slider">
         <div class="sliderWrapper">
             <div class="sliderItem">
-                <img src="./IMG/air.png" alt="" class="sliderImg">
-                <div class="sliderBg"></div>
-                <h1 class="sliderTitle">AIR FORCE <br>NEW <br>SEASON</h1>
-                <h2 class="sliderPrice">$119</h2>
+                <img src="./IMG/air.png" alt="" class="sliderImg" data-aos="zoom-in-right" data-aos-duration="1200" data-aos-delay="100">
+                <div class="sliderBg" data-aos="fade-right" data-aos-duration="1500"></div>
+                <h1 class="sliderTitle" data-aos="zoom-in" data-aos-duration="1400" data-aos-delay="300">AIR FORCE <br>NEW <br>SEASON</h1>
+                <h2 class="sliderPrice"  data-aos="fade-right" data-aos-duration="1500">$119</h2>
                 <a href="#product">
-                    <button class="buyButton">BUY NOW!</button>
+                    <button class="buyButton" data-aos="flip-down" data-aos-duration="1400" data-aos-delay="400">BUY NOW!</button>
                 </a>
             </div>
             <div class="sliderItem">
@@ -247,5 +248,9 @@
 
 
     <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
