@@ -490,15 +490,29 @@ footer {
     }
   
     .sliderPrice{
-      top: unset;
+      font-size: 25px;
+      top: 60%;
       bottom: -50;
-      left: 0;
-      background-color: lightgrey;
+      left: 10%;
+      background-color: lightgray;
+      -webkit-box-shadow: 6px 3px 11px 1px rgba(0,0,0,0.51);
+      -moz-box-shadow: 6px 3px 11px 1px rgba(0,0,0,0.51);
+      box-shadow: 6px 3px 11px 1px rgba(0,0,0,0.51);
     }
   
     .buyButton{
-      right: 0;
-      top: 0;
+      left: 10%;
+      top: 80%;
+      width: 25%;
+      font-size: 15px;
+      font-weight: 700;
+      border: 1px solid gray;
+      color: white;
+      background-color: black;
+      border-radius: 5px;
+      -webkit-box-shadow: 6px 10px 16px -1px rgba(0,0,0,0.78);
+      -moz-box-shadow: 6px 10px 16px -1px rgba(0,0,0,0.78);
+      box-shadow: 6px 10px 16px -1px rgba(0,0,0,0.78);
     }
   
     .features{
