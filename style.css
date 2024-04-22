@@ -59,6 +59,11 @@ nav{
 
 }
 
+.menuItem:hover{
+  transform: scale(1.4);
+  transition: all 0.3s ease-in;
+}
+
 .slider{
     background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%); 
@@ -417,6 +422,11 @@ footer {
     color: gray;
     cursor: pointer;
   }
+
+  .fListItem:hover{
+    color: rgb(32, 29, 29);
+    text-decoration: underline;
+  }
   
   .footerRight {
     flex: 1;
@@ -444,6 +454,12 @@ footer {
     width: 20px;
     height: 20px;
     margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .fIcon:hover{
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
   }
   
   .copyright{
