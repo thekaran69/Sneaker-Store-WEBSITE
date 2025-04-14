@@ -26,6 +26,9 @@
             <div class="navItem">
                 <span class="limitedOffer">Limited Offer!</span>
             </div>
+            <div class="navItem">
+                <img src="./IMG/cart.png" alt="Cart" class="cartIcon" onclick="openCartPage()">
+            </div>
         </div>
         <div class="navBottom">
             <h3 class="menuItem">AIR FORCE</h3>
@@ -125,7 +128,7 @@
             <div class="size">43</div>
             <div class="size">44</div>
         </div>
-            <button class="productButton">BUY NOW!</button>
+            <button class="addToCartButton">ADD TO CART</button>
             </div>
         
     <div class="payment">
@@ -246,6 +249,12 @@
         </div>
     </footer>
 
+    <div class="cartPage" id="cartPage" style="display: none;">
+        <button class="closeCartButton" onclick="closeCartPage()">×</button>
+        <h1 class="cartTitle">Your Cart</h1>
+        <div class="cartItems"></div>
+        <button class="checkoutButton" onclick="checkout()">Checkout</button>
+    </div>
 
     <script src="app.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
