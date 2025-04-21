@@ -144,29 +144,60 @@ if (close) {
 // Cart functionality
 let cart = [];
 
-// Add to Cart Functionality
-const addToCartButton = document.querySelector(".addToCartButton");
+// Wait until DOM is loaded
+window.addEventListener("DOMContentLoaded", () => {
+    const addToCartBtn = document.querySelector(".addToCartButton");
 
-if (addToCartButton) {
-    addToCartButton.addEventListener("click", () => {
-        cart.push({
-            title: choosenProduct.title,
-            price: choosenProduct.price,
-            img: choosenProduct.colors[0].img,
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener("click", () => {
+            const productTitle = document.querySelector(".productTitle").textContent;
+            const productPrice = document.querySelector(".productPrice").textContent;
+            const productImg = document.querySelector(".productImg").getAttribute("src");
+
+            const selectedColor = document.querySelector(".color.selected");
+            const colorValue = selectedColor ? selectedColor.getAttribute("data-color") || selectedColor.style.backgroundColor : "Default";
+
+            const selectedSize = document.querySelector(".size.selected");
+            const sizeValue = selectedSize ? selectedSize.textContent : "Default";
+
+            const cartItem = {
+                title: productTitle,
+                price: productPrice,
+                img: productImg,
+                color: colorValue,
+                size: sizeValue,
+            };
+
+            cart.push(cartItem); // 🟢 Push new item without replacing
+            alert("Product added to cart!");
         });
-        alert(`${choosenProduct.title} has been added to your cart!`);
+    } else {
+        console.error("Add to Cart button not found!");
+    }
+
+    // Color selection
+    document.querySelectorAll(".color").forEach((colorDiv) => {
+        colorDiv.addEventListener("click", () => {
+            document.querySelectorAll(".color").forEach((c) => c.classList.remove("selected"));
+            colorDiv.classList.add("selected");
+        });
     });
-} else {
-    console.error("ADD TO CART button not found!");
-}
+
+    // Size selection
+    document.querySelectorAll(".size").forEach((sizeDiv) => {
+        sizeDiv.addEventListener("click", () => {
+            document.querySelectorAll(".size").forEach((s) => s.classList.remove("selected"));
+            sizeDiv.classList.add("selected");
+        });
+    });
+});
 
 // Open Cart Page
 function openCartPage() {
     const cartPage = document.getElementById("cartPage");
     const cartItemsContainer = document.querySelector(".cartItems");
 
-    // Clear previous cart items
-    cartItemsContainer.innerHTML = "";
+    cartItemsContainer.innerHTML = ""; // Clear old view
 
     if (cart.length === 0) {
         cartItemsContainer.innerHTML = "<p class='emptyCartMessage'>Your cart is empty.</p>";
@@ -176,7 +207,12 @@ function openCartPage() {
             cartItem.classList.add("cartItem");
             cartItem.innerHTML = `
                 <img src="${item.img}" alt="${item.title}">
-                <span>${item.title} - ${item.price}</span>
+                <div class="itemDetails">
+                    <p><strong>${item.title}</strong></p>
+                    <p>Price: ${item.price}</p>
+                    <p>Size: ${item.size}</p>
+                    <p>Color: <span class="colorBox" style="background-color:${item.color};"></span> ${item.color}</p>
+                </div>
                 <button onclick="removeFromCart(${index})">Remove</button>
             `;
             cartItemsContainer.appendChild(cartItem);
@@ -188,23 +224,27 @@ function openCartPage() {
 
 // Close Cart Page
 function closeCartPage() {
-    const cartPage = document.getElementById("cartPage");
-    cartPage.style.display = "none";
+    document.getElementById("cartPage").style.display = "none";
 }
 
 // Remove Item from Cart
 function removeFromCart(index) {
     cart.splice(index, 1);
-    openCartPage();
+    openCartPage(); // Refresh view
 }
 
-// Checkout Functionality
+// Checkout
 function checkout() {
     if (cart.length === 0) {
         alert("Your cart is empty!");
     } else {
-        cart = []; // Clear the cart
+        cart = []; // Clear all items
         alert("Purchase successful!");
         closeCartPage();
     }
+}
+
+// Continue Shopping
+function continueShopping() {
+    window.location.href = "index.html"; // Change to your home page URL
 }

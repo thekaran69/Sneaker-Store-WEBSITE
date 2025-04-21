@@ -741,3 +741,40 @@ footer {
 .closeCartButton:hover {
     background-color: #555;
 }
+
+.colorBox {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #218838;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.goToCartBtn {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.goToCartBtn:hover {
+    background-color: #444;
+}
