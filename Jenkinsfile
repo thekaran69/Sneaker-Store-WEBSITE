@@ -4,14 +4,12 @@ agent any
 environment {
     GITHUB_TOKEN = credentials('github-token')
 }
-
 stages {
     stage('Checkout') {
         steps {
             git url: 'https://github.com/thekaran69/Sneaker-Store-WEBSITE', credentialsId: 'github-token'
         }
     }
-
     stage('Build Docker Image') {
         steps {
             script {
@@ -19,7 +17,6 @@ stages {
             }
         }
     }
-
     stage('Run Docker Image') {
         steps {
             script {
@@ -28,7 +25,6 @@ stages {
         }
     }
 }
-
 post {
     success {
         echo 'Build and deployment succeeded!'
@@ -38,5 +34,4 @@ post {
     }
 }
 }
-
 
