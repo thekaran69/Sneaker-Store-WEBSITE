@@ -109,7 +109,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        docker images | grep "sneaker-store-app"
+                        docker images | grep "sneaker-store-app:latest"
                         echo "Verifying image is pushed to Docker Hub..."
                         docker pull "$DOCKER_CREDENTIALS_USR/sneaker-store-app:latest"
                     '''
@@ -117,16 +117,16 @@ pipeline {
             }
         }
 
-        stage('Run Docker Container') {
-            steps {
-                script {
-                    sh '''
-                        docker rm -f sneaker-store-container || true
-                        docker run -d -p 8085:80 --name sneaker-store-container "$DOCKER_CREDENTIALS_USR/sneaker-store-app:latest"
-                    '''
-                }
-            }
-        }
+        // stage('Run Docker Container') {
+        //     steps {
+        //         script {
+        //             sh '''
+        //                 docker rm -f sneaker-store-container || true
+        //                 docker run -d -p 8085:80 --name sneaker-store-container "$DOCKER_CREDENTIALS_USR/sneaker-store-app:latest"
+        //             '''
+        //         }
+        //     }
+        // }
     }
 
     post {
