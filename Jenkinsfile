@@ -16,14 +16,14 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t sneaker-store-app .'
+                    bat 'docker build -t sneaker-store-app .'
                 }
             }
         }
         stage('Run Docker Image') {
             steps {
                 script {
-                    sh 'docker run -d -p 8085:8080 sneaker-store-app'
+                    bat 'docker run -d -p 8085:8080 sneaker-store-app'
                 }
             }
         }
