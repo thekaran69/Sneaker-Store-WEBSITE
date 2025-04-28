@@ -84,7 +84,7 @@ pipeline {
             steps {
                 git url: 'https://github.com/thekaran69/Sneaker-Store-WEBSITE', 
                     branch: 'main',
-                    credentialsId: 'github-token'
+                    credentialsId: 'docker-cred'
             }
         }
 
